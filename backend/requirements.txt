@@ -1,0 +1,11 @@
+flask
+flask-cors
+python-dotenv
+requests
+anthropic
+gunicorn
+groq
+flasgger
+firebase-admin
+fpdf2
+google-cloud-speech

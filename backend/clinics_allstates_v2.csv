@@ -1,0 +1,70 @@
+clinic_id,name,type,village,taluka,district,state,lat,lng,phone,open_hours,beds,has_emergency,maps_url
+C001,PHC Alewadi,PHC,Alewadi,Shirur,Pune,Maharashtra,18.8471,74.1823,02138-225011,8AM-8PM,10,False,https://www.google.com/maps/search/?api=1&query=PHC+Alewadi+Alewadi+Pune+Maharashtra
+C002,PHC Narayangaon,PHC,Narayangaon,Junnar,Pune,Maharashtra,19.0923,73.9871,02132-243100,8AM-8PM,10,False,https://www.google.com/maps/search/?api=1&query=PHC+Narayangaon+Narayangaon+Pune+Maharashtra
+C003,Rural Hospital Igatpuri,RH,Igatpuri,Igatpuri,Nashik,Maharashtra,19.6954,73.5631,02553-244022,24 Hours,25,True,https://www.google.com/maps/search/?api=1&query=Rural+Hospital+Igatpuri+Igatpuri+Nashik+Maharashtra
+C004,PHC Jawhar,CHC,Jawhar,Jawhar,Palghar,Maharashtra,19.9113,73.2274,02520-222044,24 Hours,25,True,https://www.google.com/maps/search/?api=1&query=PHC+Jawhar+Jawhar+Palghar+Maharashtra
+C005,PHC Ghargaon,PHC,Ghargaon,Shrirampur,Ahmednagar,Maharashtra,19.6134,74.6521,02422-272100,8AM-8PM,10,False,https://www.google.com/maps/search/?api=1&query=PHC+Ghargaon+Ghargaon+Ahmednagar+Maharashtra
+C006,PHC Sakaldiha,PHC,Sakaldiha,Sakaldiha,Chandauli,Uttar Pradesh,25.0712,83.0834,05412-232100,8AM-4PM,8,False,https://www.google.com/maps/search/?api=1&query=PHC+Sakaldiha+Sakaldiha+Chandauli+Uttar+Pradesh
+C007,PHC Naugarh,PHC,Naugarh,Naugarh,Siddharthnagar,Uttar Pradesh,27.4231,83.112,05544-222055,8AM-4PM,8,False,https://www.google.com/maps/search/?api=1&query=PHC+Naugarh+Naugarh+Siddharthnagar+Uttar+Pradesh
+C008,CHC Robertsganj,CHC,Robertsganj,Robertsganj,Sonbhadra,Uttar Pradesh,24.6893,83.0672,05444-222033,24 Hours,30,True,https://www.google.com/maps/search/?api=1&query=CHC+Robertsganj+Robertsganj+Sonbhadra+Uttar+Pradesh
+C009,PHC Areraj,PHC,Areraj,Areraj,East Champaran,Bihar,26.8512,84.6723,06252-222011,8AM-4PM,6,False,https://www.google.com/maps/search/?api=1&query=PHC+Areraj+Areraj+East+Champaran+Bihar
+C010,PHC Sikta,PHC,Sikta,Sikta,West Champaran,Bihar,27.0341,84.0512,06254-232100,8AM-4PM,6,False,https://www.google.com/maps/search/?api=1&query=PHC+Sikta+Sikta+West+Champaran+Bihar
+C011,Referral Hospital Motihari,RH,Motihari,Motihari,East Champaran,Bihar,26.6512,84.9183,06252-242033,24 Hours,50,True,https://www.google.com/maps/search/?api=1&query=Referral+Hospital+Motihari+Motihari+East+Champaran+Bihar
+C012,PHC Gogunda,PHC,Gogunda,Gogunda,Udaipur,Rajasthan,24.7823,73.4512,02950-232100,8AM-2PM,8,False,https://www.google.com/maps/search/?api=1&query=PHC+Gogunda+Gogunda+Udaipur+Rajasthan
+C013,PHC Kotra,PHC,Kotra,Kotra,Udaipur,Rajasthan,23.9234,73.1823,02906-222055,8AM-2PM,6,False,https://www.google.com/maps/search/?api=1&query=PHC+Kotra+Kotra+Udaipur+Rajasthan
+C014,CHC Salumber,CHC,Salumber,Salumber,Udaipur,Rajasthan,24.0912,74.0341,02904-222033,24 Hours,30,True,https://www.google.com/maps/search/?api=1&query=CHC+Salumber+Salumber+Udaipur+Rajasthan
+C015,PHC Amarpur,PHC,Amarpur,Amarpur,Balaghat,Madhya Pradesh,21.9823,80.3512,07632-222011,8AM-2PM,8,False,https://www.google.com/maps/search/?api=1&query=PHC+Amarpur+Amarpur+Balaghat+Madhya+Pradesh
+C016,PHC Bichhia,PHC,Bichhia,Bichhia,Mandla,Madhya Pradesh,22.6512,80.9823,07643-222055,8AM-2PM,6,False,https://www.google.com/maps/search/?api=1&query=PHC+Bichhia+Bichhia+Mandla+Madhya+Pradesh
+C017,CHC Nainpur,CHC,Nainpur,Nainpur,Mandla,Madhya Pradesh,22.6723,80.4912,07636-232033,24 Hours,25,True,https://www.google.com/maps/search/?api=1&query=CHC+Nainpur+Nainpur+Mandla+Madhya+Pradesh
+C018,PHC Dediyapada,PHC,Dediyapada,Dediyapada,Narmada,Gujarat,21.9012,73.5823,02640-222011,8AM-2PM,8,False,https://www.google.com/maps/search/?api=1&query=PHC+Dediyapada+Dediyapada+Narmada+Gujarat
+C019,PHC Dang Ahwa,PHC,Ahwa,Dang,Dang,Gujarat,20.7561,73.6834,02631-220055,8AM-2PM,6,False,https://www.google.com/maps/search/?api=1&query=PHC+Dang+Ahwa+Ahwa+Dang+Gujarat
+C020,CHC Vansda,CHC,Vansda,Vansda,Navsari,Gujarat,20.5712,73.4123,02630-222033,24 Hours,25,True,https://www.google.com/maps/search/?api=1&query=CHC+Vansda+Vansda+Navsari+Gujarat
+C021,PHC Salboni,PHC,Salboni,Salboni,Paschim Medinipur,West Bengal,22.5234,87.0512,03222-252011,8AM-4PM,8,False,https://www.google.com/maps/search/?api=1&query=PHC+Salboni+Salboni+Paschim+Medinipur+West+Bengal
+C022,PHC Jhargram,PHC,Jhargram,Jhargram,Jhargram,West Bengal,22.4512,86.9823,03221-255033,8AM-4PM,8,False,https://www.google.com/maps/search/?api=1&query=PHC+Jhargram+Jhargram+Jhargram+West+Bengal
+C023,Rural Hospital Binpur,RH,Binpur,Binpur,Jhargram,West Bengal,22.6123,86.7234,03221-256022,24 Hours,30,True,https://www.google.com/maps/search/?api=1&query=Rural+Hospital+Binpur+Binpur+Jhargram+West+Bengal
+C024,PHC Bissamcuttack,PHC,Bissamcuttack,Bissamcuttack,Rayagada,Odisha,19.4512,83.4823,06856-222011,8AM-4PM,6,False,https://www.google.com/maps/search/?api=1&query=PHC+Bissamcuttack+Bissamcuttack+Rayagada+Odisha
+C025,PHC Kashipur,PHC,Kashipur,Kashipur,Rayagada,Odisha,19.6823,83.0512,06855-232055,8AM-4PM,6,False,https://www.google.com/maps/search/?api=1&query=PHC+Kashipur+Kashipur+Rayagada+Odisha
+C026,CHC Gunupur,CHC,Gunupur,Gunupur,Rayagada,Odisha,19.0712,83.8234,06858-222033,24 Hours,25,True,https://www.google.com/maps/search/?api=1&query=CHC+Gunupur+Gunupur+Rayagada+Odisha
+C027,PHC Khunti,PHC,Khunti,Khunti,Khunti,Jharkhand,23.0712,85.2823,06528-222011,8AM-4PM,6,False,https://www.google.com/maps/search/?api=1&query=PHC+Khunti+Khunti+Khunti+Jharkhand
+C028,PHC Torpa,PHC,Torpa,Torpa,Khunti,Jharkhand,22.9234,85.1512,06528-232055,8AM-4PM,6,False,https://www.google.com/maps/search/?api=1&query=PHC+Torpa+Torpa+Khunti+Jharkhand
+C029,CHC Simdega,CHC,Simdega,Simdega,Simdega,Jharkhand,22.6112,84.5023,06522-252033,24 Hours,30,True,https://www.google.com/maps/search/?api=1&query=CHC+Simdega+Simdega+Simdega+Jharkhand
+C030,Civil Hospital Asarwa,Hospital,Asarwa,Ahmedabad City,Ahmedabad,Gujarat,23.0419,72.6035,079-22681007,24 Hours,1800,True,https://www.google.com/maps/search/?api=1&query=Civil+Hospital+Asarwa+Ahmedabad+Gujarat
+C031,LG Hospital Maninagar,Hospital,Maninagar,Ahmedabad City,Ahmedabad,Gujarat,22.996,72.601,079-25391261,24 Hours,550,True,https://www.google.com/maps/search/?api=1&query=LG+Hospital+Maninagar+Ahmedabad+Gujarat
+C032,VS Hospital Ellisbridge,Hospital,Ellisbridge,Ahmedabad City,Ahmedabad,Gujarat,23.0204,72.5647,079-26578331,24 Hours,600,True,https://www.google.com/maps/search/?api=1&query=VS+Hospital+Ellisbridge+Ahmedabad+Gujarat
+C033,Shardaben Hospital,Hospital,Bapunagar,Ahmedabad City,Ahmedabad,Gujarat,23.0431,72.6312,079-22743612,24 Hours,400,True,https://www.google.com/maps/search/?api=1&query=Shardaben+Hospital+Bapunagar+Ahmedabad+Gujarat
+C034,SVP Hospital Ahmedabad,Hospital,Memnagar,Ahmedabad City,Ahmedabad,Gujarat,23.0587,72.5342,079-27491936,24 Hours,750,True,https://www.google.com/maps/search/?api=1&query=SVP+Hospital+Ahmedabad+Gujarat
+C035,UN Mehta Institute of Cardiology,Hospital,Civil Hospital Campus,Ahmedabad City,Ahmedabad,Gujarat,23.0412,72.6041,079-22681300,24 Hours,450,True,https://www.google.com/maps/search/?api=1&query=UN+Mehta+Institute+Cardiology+Ahmedabad+Gujarat
+C036,Sola Civil Hospital,Hospital,Sola,Ahmedabad City,Ahmedabad,Gujarat,23.0734,72.5281,079-27490000,24 Hours,500,True,https://www.google.com/maps/search/?api=1&query=Sola+Civil+Hospital+Ahmedabad+Gujarat
+C037,Rajasthan Hospital Shahibaug,Hospital,Shahibaug,Ahmedabad City,Ahmedabad,Gujarat,23.0587,72.5892,079-22862251,24 Hours,300,True,https://www.google.com/maps/search/?api=1&query=Rajasthan+Hospital+Shahibaug+Ahmedabad+Gujarat
+C038,Trauma Hospital Ahmedabad,Hospital,Asarwa,Ahmedabad City,Ahmedabad,Gujarat,23.0445,72.6023,079-22680000,24 Hours,200,True,https://www.google.com/maps/search/?api=1&query=Trauma+Hospital+Asarwa+Ahmedabad+Gujarat
+C039,Sterling Hospital Gurukul,Hospital,Gurukul,Ahmedabad City,Ahmedabad,Gujarat,23.0456,72.5312,079-40011000,24 Hours,350,True,https://www.google.com/maps/search/?api=1&query=Sterling+Hospital+Gurukul+Ahmedabad+Gujarat
+C040,Apollo Hospital Ahmedabad,Hospital,Bhat,Gandhinagar,Ahmedabad,Gujarat,23.1012,72.5234,079-66701800,24 Hours,350,True,https://www.google.com/maps/search/?api=1&query=Apollo+Hospital+Ahmedabad+Gujarat
+C041,Vatva PHC,PHC,Vatva,Ahmedabad City,Ahmedabad,Gujarat,22.98,72.65,079-25841234,8AM-8PM,10,False,https://www.google.com/maps/search/?api=1&query=Vatva+PHC+Ahmedabad+Gujarat
+C042,Naroda PHC,PHC,Naroda,Ahmedabad City,Ahmedabad,Gujarat,23.06,72.66,079-22811234,8AM-8PM,10,False,https://www.google.com/maps/search/?api=1&query=Naroda+PHC+Ahmedabad+Gujarat
+C043,Odhav CHC,CHC,Odhav,Ahmedabad City,Ahmedabad,Gujarat,23.01,72.67,079-22901234,24 Hours,30,True,https://www.google.com/maps/search/?api=1&query=Odhav+CHC+Ahmedabad+Gujarat
+C044,Bapunagar PHC,PHC,Bapunagar,Ahmedabad City,Ahmedabad,Gujarat,23.045,72.628,079-22741234,8AM-8PM,10,False,https://www.google.com/maps/search/?api=1&query=Bapunagar+PHC+Ahmedabad+Gujarat
+C045,Nikol PHC,PHC,Nikol,Ahmedabad City,Ahmedabad,Gujarat,23.035,72.678,079-22991234,8AM-8PM,10,False,https://www.google.com/maps/search/?api=1&query=Nikol+PHC+Ahmedabad+Gujarat
+C046,Saraspur PHC,PHC,Saraspur,Ahmedabad City,Ahmedabad,Gujarat,23.0356,72.6123,079-22751234,8AM-8PM,10,False,https://www.google.com/maps/search/?api=1&query=Saraspur+PHC+Ahmedabad+Gujarat
+C047,Rakhial PHC,PHC,Rakhial,Ahmedabad City,Ahmedabad,Gujarat,23.0489,72.6345,079-22801234,8AM-8PM,10,False,https://www.google.com/maps/search/?api=1&query=Rakhial+PHC+Ahmedabad+Gujarat
+C048,Gomtipur CHC,CHC,Gomtipur,Ahmedabad City,Ahmedabad,Gujarat,23.0267,72.6234,079-22731234,24 Hours,30,True,https://www.google.com/maps/search/?api=1&query=Gomtipur+CHC+Ahmedabad+Gujarat
+C049,Satellite PHC,PHC,Satellite,Ahmedabad City,Ahmedabad,Gujarat,23.0234,72.5123,079-26761234,8AM-8PM,10,False,https://www.google.com/maps/search/?api=1&query=Satellite+PHC+Ahmedabad+Gujarat
+C050,Ghodasar PHC,PHC,Ghodasar,Ahmedabad City,Ahmedabad,Gujarat,22.9912,72.6012,079-25451234,8AM-8PM,10,False,https://www.google.com/maps/search/?api=1&query=Ghodasar+PHC+Ahmedabad+Gujarat
+C051,Isanpur PHC,PHC,Isanpur,Ahmedabad City,Ahmedabad,Gujarat,22.9823,72.6234,079-25671234,8AM-8PM,10,False,https://www.google.com/maps/search/?api=1&query=Isanpur+PHC+Ahmedabad+Gujarat
+C052,Gandhinagar Civil Hospital,Hospital,Sector 12,Gandhinagar,Gandhinagar,Gujarat,23.2156,72.6369,079-23222222,24 Hours,400,True,https://www.google.com/maps/search/?api=1&query=Gandhinagar+Civil+Hospital+Sector+12+Gujarat
+C053,AIIMS Gandhinagar,Hospital,Lekawada,Gandhinagar,Gandhinagar,Gujarat,23.1623,72.6712,079-23969000,24 Hours,750,True,https://www.google.com/maps/search/?api=1&query=AIIMS+Gandhinagar+Lekawada+Gujarat
+C054,Nidhi Hospital Gandhinagar,Hospital,Sector 21,Gandhinagar,Gandhinagar,Gujarat,23.2234,72.6512,079-23247777,24 Hours,150,True,https://www.google.com/maps/search/?api=1&query=Nidhi+Hospital+Sector+21+Gandhinagar+Gujarat
+C055,Shalby Hospital Kudasan,Hospital,Kudasan,Gandhinagar,Gandhinagar,Gujarat,23.1845,72.6345,079-35353535,24 Hours,200,True,https://www.google.com/maps/search/?api=1&query=Shalby+Hospital+Kudasan+Gandhinagar+Gujarat
+C056,PHC Sector 28 Gandhinagar,PHC,Sector 28,Gandhinagar,Gandhinagar,Gujarat,23.2312,72.6623,079-23242323,8AM-8PM,10,False,https://www.google.com/maps/search/?api=1&query=PHC+Sector+28+Gandhinagar+Gujarat
+C057,CHC Kalol,CHC,Kalol,Kalol,Gandhinagar,Gujarat,23.2412,72.5023,02764-220234,24 Hours,30,True,https://www.google.com/maps/search/?api=1&query=CHC+Kalol+Gandhinagar+Gujarat
+C058,PHC Mansa,PHC,Mansa,Mansa,Gandhinagar,Gujarat,23.4234,72.6712,02763-220123,8AM-8PM,10,False,https://www.google.com/maps/search/?api=1&query=PHC+Mansa+Gandhinagar+Gujarat
+C059,PHC Dehgam,PHC,Dehgam,Dehgam,Gandhinagar,Gujarat,23.1623,72.7934,02716-220456,8AM-8PM,10,False,https://www.google.com/maps/search/?api=1&query=PHC+Dehgam+Gandhinagar+Gujarat
+C060,PHC Pethapur,PHC,Pethapur,Gandhinagar,Gandhinagar,Gujarat,23.1934,72.6823,079-23253434,8AM-8PM,10,False,https://www.google.com/maps/search/?api=1&query=PHC+Pethapur+Gandhinagar+Gujarat
+C061,Civil Hospital Anand,Hospital,Anand,Anand,Anand,Gujarat,22.5645,72.9289,02692-240470,24 Hours,300,True,https://www.google.com/maps/search/?api=1&query=Civil+Hospital+Anand+Gujarat
+C062,PHC Borsad,PHC,Borsad,Borsad,Anand,Gujarat,22.4023,72.8912,02696-220234,8AM-8PM,10,False,https://www.google.com/maps/search/?api=1&query=PHC+Borsad+Anand+Gujarat
+C063,CHC Khambhat,CHC,Khambhat,Khambhat,Anand,Gujarat,22.3234,72.6212,02698-220456,24 Hours,30,True,https://www.google.com/maps/search/?api=1&query=CHC+Khambhat+Anand+Gujarat
+C064,SSG Hospital Vadodara,Hospital,Raopura,Vadodara,Vadodara,Gujarat,22.3072,73.1812,0265-2421222,24 Hours,1700,True,https://www.google.com/maps/search/?api=1&query=SSG+Hospital+Vadodara+Gujarat
+C065,PHC Karjan,PHC,Karjan,Karjan,Vadodara,Gujarat,22.0523,73.1234,02643-220123,8AM-8PM,10,False,https://www.google.com/maps/search/?api=1&query=PHC+Karjan+Vadodara+Gujarat
+C066,Civil Hospital Mehsana,Hospital,Mehsana,Mehsana,Mehsana,Gujarat,23.588,72.3693,02762-220234,24 Hours,250,True,https://www.google.com/maps/search/?api=1&query=Civil+Hospital+Mehsana+Gujarat
+C067,PHC Vijapur,PHC,Vijapur,Vijapur,Mehsana,Gujarat,23.5612,72.7523,02763-242100,8AM-8PM,10,False,https://www.google.com/maps/search/?api=1&query=PHC+Vijapur+Mehsana+Gujarat
+C068,PHC Dediyapada,PHC,Dediyapada,Dediyapada,Narmada,Gujarat,21.9012,73.5823,02640-222011,8AM-8PM,8,False,https://www.google.com/maps/search/?api=1&query=PHC+Dediyapada+Narmada+Gujarat
+C069,CHC Vansda,CHC,Vansda,Vansda,Navsari,Gujarat,20.5712,73.4123,02630-222033,24 Hours,25,True,https://www.google.com/maps/search/?api=1&query=CHC+Vansda+Navsari+Gujarat

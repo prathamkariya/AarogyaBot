@@ -1,0 +1,151 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* AarogyaBot WhatsApp-style color palette */
+  --background: #F0F2F5;
+  --foreground: #111B21;
+  --card: #FFFFFF;
+  --card-foreground: #111B21;
+  --popover: #FFFFFF;
+  --popover-foreground: #111B21;
+  --primary: #075E54;
+  --primary-foreground: #FFFFFF;
+  --primary-light: #25D366;
+  --secondary: #E9EDEF;
+  --secondary-foreground: #111B21;
+  --muted: #F0F2F5;
+  --muted-foreground: #667781;
+  --accent: #E9EDEF;
+  --accent-foreground: #111B21;
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --border: #E9EDEF;
+  --input: #E9EDEF;
+  --ring: #075E54;
+  
+  /* Chat colors */
+  --chat-bg: #E5DDD5;
+  --user-bubble: #DCF8C6;
+  --bot-bubble: #FFFFFF;
+  
+  /* Triage colors */
+  --emergency: #EF4444;
+  --clinic: #F59E0B;
+  --selfcare: #10B981;
+  
+  /* Charts */
+  --chart-1: #EF4444;
+  --chart-2: #F59E0B;
+  --chart-3: #10B981;
+  --chart-4: #075E54;
+  --chart-5: #25D366;
+  
+  --radius: 0.625rem;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #111B21;
+  --sidebar-primary: #075E54;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #E9EDEF;
+  --sidebar-accent-foreground: #111B21;
+  --sidebar-border: #E9EDEF;
+  --sidebar-ring: #075E54;
+}
+
+.dark {
+  --background: #111B21;
+  --foreground: #E9EDEF;
+  --card: #1F2C33;
+  --card-foreground: #E9EDEF;
+  --popover: #1F2C33;
+  --popover-foreground: #E9EDEF;
+  --primary: #25D366;
+  --primary-foreground: #111B21;
+  --primary-light: #25D366;
+  --secondary: #2A3942;
+  --secondary-foreground: #E9EDEF;
+  --muted: #2A3942;
+  --muted-foreground: #8696A0;
+  --accent: #2A3942;
+  --accent-foreground: #E9EDEF;
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --border: #2A3942;
+  --input: #2A3942;
+  --ring: #25D366;
+  --chat-bg: #0B141A;
+  --user-bubble: #005C4B;
+  --bot-bubble: #1F2C33;
+  --chart-1: #EF4444;
+  --chart-2: #F59E0B;
+  --chart-3: #10B981;
+  --chart-4: #075E54;
+  --chart-5: #25D366;
+  --sidebar: #1F2C33;
+  --sidebar-foreground: #E9EDEF;
+  --sidebar-primary: #25D366;
+  --sidebar-primary-foreground: #111B21;
+  --sidebar-accent: #2A3942;
+  --sidebar-accent-foreground: #E9EDEF;
+  --sidebar-border: #2A3942;
+  --sidebar-ring: #25D366;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter), 'Inter', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --color-chat-bg: var(--chat-bg);
+  --color-user-bubble: var(--user-bubble);
+  --color-bot-bubble: var(--bot-bubble);
+  --color-emergency: var(--emergency);
+  --color-clinic: var(--clinic);
+  --color-selfcare: var(--selfcare);
+  --color-primary-light: var(--primary-light);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
