@@ -1,607 +1,269 @@
-# AarogyaBot
-
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/prathamkariya/AarogyaBot/main/frontend/public/logo.png" alt="AarogyaBot" width="120"/>
-
-# AarogyaBot
-
-### Multilingual AI health triage built for first-line care
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2563EB,100:06B6D4&height=190&section=header&text=AarogyaBot&fontSize=52&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Multilingual%20AI%20Health%20Triage&descAlignY=60&descSize=18" width="100%"/>
 
 <p>
-  <a href="https://aarogyabot.vercel.app"><img src="https://img.shields.io/badge/Live%20Demo-AarogyaBot-2563EB?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo"/></a>
-  <img src="https://img.shields.io/badge/Next.js-16-111827?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js"/>
-  <img src="https://img.shields.io/badge/React-19-111827?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React"/>
-  <img src="https://img.shields.io/badge/Flask-Python-111827?style=for-the-badge&logo=flask&logoColor=white" alt="Flask"/>
-  <img src="https://img.shields.io/badge/Groq-Llama%203.3%2070B-111827?style=for-the-badge" alt="Groq Llama 3.3 70B"/>
-  <img src="https://img.shields.io/badge/Firebase-Firestore-111827?style=for-the-badge&logo=firebase&logoColor=FFCA28" alt="Firebase"/>
+  <a href="https://aarogyabot.vercel.app">
+    <img src="https://img.shields.io/badge/Live%20Demo-Visit%20AarogyaBot-2563EB?style=for-the-badge&logo=vercel&logoColor=white"/>
+  </a>
+  <a href="https://github.com/prathamkariya/AarogyaBot">
+    <img src="https://img.shields.io/github/stars/prathamkariya/AarogyaBot?style=for-the-badge&logo=github&label=Stars"/>
+  </a>
 </p>
 
-<p>
-AarogyaBot takes a patient's symptoms in a natural, conversational way, asks targeted follow-up questions when a case is incomplete, separates <b>emergency</b>, <b>clinic</b>, and <b>self-care</b> cases, and connects the result to nearby healthcare facilities.
-</p>
+**AI-assisted triage • Multilingual care • Actionable healthcare navigation**
 
 </div>
 
 ---
 
-## Preview
+## What is AarogyaBot?
 
-> Add your screenshots to `docs/screenshots/`. The README is already wired to display them.
+AarogyaBot is a multilingual health-triage platform designed to help users describe symptoms, clarify incomplete cases, estimate urgency, and find nearby healthcare facilities.
+
+It supports three experiences:
 
 <table>
 <tr>
-<td width="50%">
+<td width="33%" align="center">
 
-### Patient Triage
+### Patient
 
-<img src="docs/screenshots/patient-chat.png" alt="AarogyaBot patient chat" width="100%"/>
-
-</td>
-<td width="50%">
-
-### ASHA Worker View
-
-<img src="docs/screenshots/asha-dashboard.png" alt="AarogyaBot ASHA dashboard" width="100%"/>
+Describe symptoms, use text/image/voice input, receive triage guidance, locate facilities and generate reports.
 
 </td>
-</tr>
-<tr>
-<td width="50%">
+<td width="33%" align="center">
 
-### District Dashboard
+### ASHA Worker
 
-<img src="docs/screenshots/admin-dashboard.png" alt="AarogyaBot admin dashboard" width="100%"/>
+Triage patients through a dedicated workflow with urgency filters, symptom context and patient history.
 
 </td>
-<td width="50%">
+<td width="33%" align="center">
 
-### Health Record
+### Admin
 
-<img src="docs/screenshots/health-record.png" alt="AarogyaBot health record" width="100%"/>
+View district-level triage activity, urgency distribution, top symptoms and recent emergencies.
 
 </td>
 </tr>
 </table>
 
-<p align="center">
-  <img src="docs/screenshots/triage-result.png" alt="AarogyaBot triage result" width="82%"/>
-</p>
-
-<p align="center"><sub>Recommended: 4–5 polished screenshots rather than a long gallery.</sub></p>
+> **Core idea:** the LLM handles language understanding; explicit application rules handle the final urgency classification.
 
 ---
 
-## What is AarogyaBot?
-
-AarogyaBot is a multilingual health-triage application designed around the first stage of care: understanding symptoms, estimating urgency, and helping the user reach an appropriate healthcare facility.
-
-The system has three main user flows:
-
-| User | What they can do |
-|---|---|
-| **Patient** | Describe symptoms, answer follow-up questions, use image/voice input, view triage guidance, find nearby facilities, generate a PDF report |
-| **ASHA Worker** | Triage patients through a worker-focused dashboard, maintain patient context, review symptoms, and access facility guidance |
-| **Admin** | View aggregate triage activity, urgency distribution, top symptoms, and recent emergency cases |
-
-The key architectural decision is that the LLM is **not the final authority on urgency**. It extracts symptoms and severity signals; a deterministic rule engine performs the final emergency/clinic/self-care classification.
-
----
-
-## Core workflow
-
-```mermaid
-flowchart LR
-    A[Patient input] --> B{Input}
-    B -->|Text| C[LLM symptom extraction]
-    B -->|Image| D[Vision analysis]
-    B -->|Voice| E[Speech-to-Text]
-    E --> C
-    C --> F[Structured symptoms + severity indicators]
-    D --> F
-    F --> G{Deterministic rule engine}
-    G -->|Emergency| H[Immediate care guidance]
-    G -->|Clinic| I[Clinic / PHC guidance]
-    G -->|Self-care| J[Self-care guidance]
-    G -->|Incomplete| K[Follow-up question]
-    K --> C
-    H --> L[Nearby facilities]
-    I --> L
-    H --> M[Optional PDF report]
-    I --> M
-    J --> M
-```
-
-### The decision boundary
-
-AarogyaBot uses the LLM for **understanding**, not for making the final triage decision.
-
-The backend extracts structured signals such as:
+## The idea
 
 ```text
-chest pain
-breathing difficulty
-unconsciousness
-severe bleeding
-seizures
-stroke signs
-head injury
-poisoning
-animal/snake bite
-high fever
-severe abdominal pain
-blood in stool/vomit
-pregnancy-related warning signs
+User
+ ↓
+Text / Image / Voice
+ ↓
+AI extraction
+ ↓
+Structured symptoms + severity signals
+ ↓
+Deterministic triage engine
+ ├── Emergency
+ ├── Clinic
+ ├── Self-care
+ └── Follow-up
+ ↓
+Guidance + nearby facilities
+ ↓
+Optional health report
 ```
 
-These signals then move through a deterministic classifier:
-
-```text
-Emergency indicator present
-        ↓
-    EMERGENCY
-
-No emergency indicator
-        ↓
-Clinic indicator / clinic symptom
-        ↓
-      CLINIC
-
-No clinic signal
-        ↓
-Enough information?
-   ├── No  → follow-up question
-   └── Yes → SELF-CARE
-```
-
-This makes the final decision path explicit and inspectable instead of allowing an LLM response to directly determine urgency.
+This separation keeps the final decision path explicit instead of asking an LLM to directly decide everything.
 
 ---
 
-## System architecture
+## How it works
+
+### 01 — Understand
+
+For text input, **Llama 3.3 70B via Groq** extracts symptoms, language and severity indicators into structured data.
+
+For incomplete inputs, `TriageSession` maintains conversation history and can ask up to two follow-up questions.
+
+### 02 — Decide
+
+The structured result goes through the rule engine in `backend/triage.py`.
+
+```text
+Emergency signals
+      ↓
+  EMERGENCY
+
+Clinic signals
+      ↓
+    CLINIC
+
+Enough information + no escalation
+      ↓
+   SELF-CARE
+
+Insufficient information
+      ↓
+   FOLLOW-UP
+```
+
+### 03 — Act
+
+The result can trigger:
+
+- nearby healthcare facility lookup
+- emergency / clinic guidance
+- voice and multilingual responses
+- PDF triage reports
+- ASHA workflow integration
+- aggregate admin analytics
+
+---
+
+## Architecture
 
 ```mermaid
 flowchart TB
-    subgraph CLIENT["Frontend — Next.js 16 + React 19"]
-        P["Patient Chat"]
-        A["ASHA Dashboard"]
-        D["Admin Dashboard"]
-        R["Health Record"]
-    end
+    U["Patient / ASHA"] --> FE["Next.js + React"]
+    FE --> API["Flask Backend"]
 
-    subgraph API["Backend — Flask"]
-        T["/triage"]
-        F["/facilities"]
-        S["/stats"]
-        W["/transcribe"]
-        PDF["/report"]
-    end
+    API --> LLM["Groq · Llama 3.3 70B"]
+    API --> V["Llama Vision"]
+    API --> STT["Google Speech-to-Text"]
 
-    subgraph AI["AI + Decision Layer"]
-        LLM["Groq · Llama 3.3 70B"]
-        VISION["Llama 4 Scout Vision"]
-        RULES["Deterministic Triage Rules"]
-        SESSION["Multi-turn Session State"]
-    end
+    LLM --> X["Structured Extraction"]
+    V --> X
+    STT --> X
 
-    subgraph DATA["Storage + Services"]
-        FS["Firebase Firestore"]
-        DATASET["Symptom + Facility CSV data"]
-        SPEECH["Google Cloud Speech-to-Text"]
-    end
+    X --> R["Deterministic Triage Engine"]
 
-    P --> T
-    A --> T
-    D --> S
-    R --> PDF
+    R --> E["Emergency"]
+    R --> C["Clinic"]
+    R --> S["Self-care"]
+    R --> Q["Follow-up"]
 
-    T --> SESSION
-    SESSION --> LLM
-    T --> VISION
-    LLM --> RULES
-    VISION --> RULES
-
-    T --> F
-    T --> PDF
-    T --> FS
-    S --> FS
-    W --> SPEECH
-    F --> DATASET
+    API --> GEO["Facility Lookup"]
+    API --> FS["Firestore"]
+    API --> PDF["PDF Reports"]
+    FS --> AD["Admin Dashboard"]
 ```
 
 ---
 
-## How the AI pipeline works
+## Multilingual by design
 
-### 1. Text symptom extraction
+The interface currently supports:
 
-Text input is sent to **Llama 3.3 70B through Groq**.
+<p align="center">
+<img src="https://img.shields.io/badge/English-en-2563EB?style=flat-square"/>
+<img src="https://img.shields.io/badge/Hindi-hi-2563EB?style=flat-square"/>
+<img src="https://img.shields.io/badge/Gujarati-gu-2563EB?style=flat-square"/>
+<img src="https://img.shields.io/badge/Marathi-mr-2563EB?style=flat-square"/>
+<img src="https://img.shields.io/badge/Tamil-ta-2563EB?style=flat-square"/>
+</p>
 
-The model is instructed to return structured JSON containing:
-
-- detected language
-- normalized symptoms
-- severity indicators
-- whether follow-up is needed
-- one short follow-up question when information is incomplete
-
-The prompt explicitly defines the assistant as a **triage assistant rather than a diagnostic system**.
-
-### 2. Multi-turn follow-up
-
-Short or vague inputs such as:
-
-```text
-"I feel sick"
-"tabiyat kharab hai"
-```
-
-can trigger a follow-up instead of an immediate final classification.
-
-`TriageSession` keeps conversation history, tracks follow-up count, and can ask up to two clarification questions before classifying the case with the information available.
-
-```text
-User message
-    ↓
-Extract symptoms
-    ↓
-Enough information?
- ┌───────────────┐
- │               │
- No              Yes
- │               │
- ↓               ↓
-Ask follow-up   Classify
- │               │
- └──────→────────┘
-```
-
-### 3. Rule-based urgency classification
-
-The core classifier lives in `backend/triage.py`.
-
-It checks:
-
-1. Emergency indicators
-2. Clinic indicators
-3. Clinic-tier symptom keywords
-4. Pending follow-up state
-5. Self-care guidance
-
-The result returned to the frontend contains the triage tier, message, symptoms, language, confidence, and next steps.
+Language selection is passed through the triage flow so follow-up questions and responses can stay aligned with the selected language.
 
 ---
 
-## Multilingual support
+## Input → Intelligence
 
-The application supports:
+<table>
+<tr>
+<td align="center"><b>Text</b><br/>Symptom extraction<br/>+ follow-up reasoning</td>
+<td align="center"><b>Image</b><br/>Vision-assisted<br/>symptom analysis</td>
+<td align="center"><b>Voice</b><br/>Speech-to-text<br/>→ normal triage</td>
+</tr>
+</table>
 
-| Language | Code |
-|---|---|
-| English | `en` |
-| Hindi | `hi` |
-| Gujarati | `gu` |
-| Marathi | `mr` |
-| Tamil | `ta` |
-
-Language selection is passed through the frontend and backend so that triage responses and follow-up questions can be produced in the selected language.
-
-The fallback extraction path also detects Devanagari, Gujarati, and Tamil scripts when the LLM is unavailable.
-
----
-
-## Image triage
-
-AarogyaBot supports image input in addition to text.
-
-The backend sends the image to a vision-capable Llama model and requests structured output containing:
+All three paths converge into the same structured triage layer.
 
 ```text
-condition name
-explanation
-recommendation
-symptoms
-visual description
-severity indicators
-follow-up requirement
+          ┌── Text ────┐
+          │             │
+Input ────┼── Image ───┼──→ Structured extraction
+          │             │
+          └── Voice ───┘
+                         ↓
+                  Rule-based triage
+                         ↓
+                  Actionable result
 ```
-
-The extracted result is then processed by the same deterministic classification layer.
-
-This gives the system a common path:
-
-```text
-Text ──────┐
-Image ─────┼──→ Structured extraction ──→ Rule engine ──→ Triage result
-Voice ─────┘
-```
-
----
-
-## Voice input
-
-Voice recordings are sent to:
-
-`POST /transcribe`
-
-The backend uses **Google Cloud Speech-to-Text** with India-specific language codes:
-
-```text
-English  → en-IN
-Hindi    → hi-IN
-Gujarati → gu-IN
-Tamil    → ta-IN
-Marathi  → mr-IN
-```
-
-The generated transcript is then passed into the normal text-triage pipeline.
-
----
-
-## Nearby healthcare facilities
-
-For emergency and clinic cases, the application can locate nearby healthcare facilities from the user's latitude and longitude.
-
-Facility records include:
-
-```text
-name
-type
-district
-state
-phone
-open_hours
-has_emergency
-latitude
-longitude
-maps_url
-```
-
-The backend computes geographic distance and returns the closest matching facilities.
-
-That turns a generic result such as:
-
-```text
-"You should seek medical care."
-```
-
-into an actionable next step:
-
-```text
-Nearest facility
-→ Distance
-→ Phone
-→ Opening hours
-→ Maps
-```
-
----
-
-## Patient, ASHA, and Admin workflows
-
-### Patient
-
-```text
-Open AarogyaBot
-      ↓
-Choose language
-      ↓
-Describe symptoms
-      ↓
-Answer follow-up if needed
-      ↓
-Receive triage result
-      ↓
-View next steps
-      ↓
-Find nearby facility
-      ↓
-Generate report
-```
-
-### ASHA Worker
-
-The ASHA dashboard provides a separate workflow for community health workers.
-
-The current frontend includes:
-
-- patient list
-- urgency filters
-- search and sorting
-- patient-specific triage sessions
-- symptom context
-- facility lookup
-- patient history views
-
-The worker can therefore use the same triage engine through a more operational interface.
-
-### Admin
-
-The admin dashboard reads aggregate data from the backend and refreshes it periodically.
-
-It can display:
-
-- total triages
-- emergency count
-- urgency distribution
-- top symptoms
-- recent emergency cases
-
----
-
-## Health records and reports
-
-The health-record interface provides a structured patient view with:
-
-- patient summary
-- current urgency
-- visit history
-- symptom timeline
-- doctor references
-- medication information
-
-Completed triage data can also be converted into a PDF report.
-
-The generated report can contain:
-
-```text
-Report metadata
-        ↓
-Triage classification
-        ↓
-Reported symptoms
-        ↓
-Recommendation
-        ↓
-Nearest facilities
-        ↓
-Emergency helplines
-        ↓
-Safety disclaimer
-```
-
-The backend generates these reports using `fpdf2`.
-
----
-
-## API surface
-
-| Method | Endpoint | Purpose |
-|---|---|---|
-| GET | `/health` | Backend health check |
-| POST | `/triage` | Text/image triage and session handling |
-| POST | `/triage/reset` | Reset a triage session |
-| GET | `/facilities` | Return nearby healthcare facilities |
-| GET | `/stats` | Aggregate triage statistics |
-| POST | `/transcribe` | Voice transcription |
-| POST | `/report` | Generate a PDF triage report |
-
-Flasgger is initialized in the Flask application for API documentation.
 
 ---
 
 ## Tech stack
 
-### Frontend
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=nextjs,react,ts,tailwind,python,flask,firebase,gcp,docker,git&perline=10" alt="Technology stack"/>
+</p>
 
-```text
-Next.js 16
-React 19
-TypeScript
-Tailwind CSS
-Recharts
-Radix UI
-```
+<p align="center">
+  <img src="https://img.shields.io/badge/Groq-Llama%203.3%2070B-111827?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Llama-Vision-111827?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Firestore-Data%20Layer-FFCA28?style=for-the-badge&logo=firebase&logoColor=111827"/>
+  <img src="https://img.shields.io/badge/fpdf2-PDF%20Reports-2563EB?style=for-the-badge"/>
+</p>
 
-### Backend
-
-```text
-Python
-Flask
-Flask-CORS
-Flasgger
-Gunicorn
-```
-
-### AI
-
-```text
-Groq
-Llama 3.3 70B
-Llama 4 Scout Vision
-```
-
-### Data and services
-
-```text
-Firebase Firestore
-Google Cloud Speech-to-Text
-CSV symptom datasets
-CSV healthcare facility dataset
-```
-
-### Reporting
-
-```text
-fpdf2
-```
+| Layer | Technologies |
+|---|---|
+| **Frontend** | Next.js 16, React 19, TypeScript, Tailwind CSS, Recharts |
+| **Backend** | Python, Flask, Flask-CORS, Gunicorn |
+| **AI** | Groq, Llama 3.3 70B, Llama Vision |
+| **Data** | Firebase Firestore, CSV-based symptom/facility data |
+| **Services** | Google Cloud Speech-to-Text, geospatial facility lookup |
+| **Reporting** | fpdf2 |
 
 ---
 
-## Repository structure
+## Project structure
 
 ```text
 AarogyaBot/
 ├── backend/
 │   ├── app.py
-│   ├── conversation.py
 │   ├── triage.py
+│   ├── conversation.py
 │   ├── llm_service.py
 │   ├── report.py
-│   ├── symptoms_final.csv
-│   ├── symptoms_v3_with_ta_gu.csv
-│   ├── clinics_allstates_v2.csv
-│   └── requirements.txt
+│   └── *.csv
 │
 ├── frontend/
 │   ├── app/
 │   ├── components/
 │   │   ├── aarogya/
-│   │   │   ├── landing-page.tsx
-│   │   │   ├── public-chat.tsx
-│   │   │   ├── asha-dashboard.tsx
-│   │   │   ├── admin-dashboard.tsx
-│   │   │   ├── health-record.tsx
-│   │   │   ├── triage-card.tsx
-│   │   │   └── ...
 │   │   └── ui/
-│   ├── public/
-│   │   ├── logo.png
-│   │   └── ...
-│   └── package.json
+│   ├── src/lib/
+│   └── public/
 │
 └── README.md
 ```
 
 ---
 
-## Local development
+## Run locally
 
-### 1. Clone
-
-```bash
-git clone https://github.com/prathamkariya/AarogyaBot.git
-cd AarogyaBot
-```
-
-### 2. Backend
+### Backend
 
 ```powershell
-cd backend
+git clone https://github.com/prathamkariya/AarogyaBot.git
+cd AarogyaBot/backend
+
 python -m venv .venv
 .venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 python app.py
 ```
 
-The Flask application listens on **port 5001** when launched directly from `app.py`.
-
-Create:
-
-`backend/.env`
+Create `backend/.env`:
 
 ```env
 GROQ_API_KEY=your_groq_api_key
 ```
 
-Optional integrations:
-
-```text
-FIREBASE_KEY
-GOOGLE_CLOUD_CREDENTIALS
-```
-
-### 3. Frontend
+### Frontend
 
 ```bash
 cd frontend
@@ -609,189 +271,106 @@ npm install
 npm run dev
 ```
 
-The frontend runs on:
-
-`http://localhost:3000`
-
-Set the backend URL in:
-
-`frontend/.env.local`
+Set the backend URL in `frontend/.env.local`:
 
 ```env
 NEXT_PUBLIC_API_URL=http://localhost:5001
 ```
 
-### 4. Open
+Open:
 
-```text
-http://localhost:3000
-```
+**http://localhost:3000**
 
 ---
 
-## Demo accounts
+## Demo
 
-The current frontend includes local demo authentication.
-
-### ASHA
+The frontend currently includes demo accounts for the two protected flows.
 
 ```text
-Email:    asha@demo.com
-Password: asha1234
+ASHA
+asha@demo.com
+asha1234
+
+ADMIN
+admin@demo.com
+admin1234
 ```
 
-### Admin
-
-```text
-Email:    admin@demo.com
-Password: admin1234
-```
-
-These credentials are intended for the demo frontend and are not production authentication credentials.
+These are local demo credentials, not production authentication.
 
 ---
 
-## Adding screenshots
+## Engineering notes
 
-Create:
+### Graceful degradation
 
-```text
-docs/
-└── screenshots/
-    ├── patient-chat.png
-    ├── triage-result.png
-    ├── asha-dashboard.png
-    ├── admin-dashboard.png
-    └── health-record.png
-```
-
-### Recommended screenshot set
-
-| File | Capture |
-|---|---|
-| `patient-chat.png` | Main patient chat and language selection |
-| `triage-result.png` | A clean emergency/clinic/self-care result |
-| `asha-dashboard.png` | Patient queue + worker workflow |
-| `admin-dashboard.png` | Charts and aggregate health statistics |
-| `health-record.png` | Patient history and symptom timeline |
-
-Use consistent browser dimensions and crop away browser chrome where possible.
-
-A good README usually needs **a handful of strong screenshots**, not dozens. Keep the most important interface first.
-
----
-
-## Important engineering notes
-
-### LLM fallback
-
-If the Groq client is unavailable, the backend falls back to keyword matching against the local symptom dataset. This provides graceful degradation instead of making the entire triage endpoint depend on a successful LLM request.
+When the Groq client is unavailable, the backend has a keyword-based fallback extraction path using the local symptom data.
 
 ### Conversation state
 
-Active `TriageSession` objects are currently stored in application memory and keyed by session ID.
+Active `TriageSession` objects are currently held in memory. Persistent session storage would be needed for a distributed production deployment.
 
-That is convenient for the prototype, but a distributed production deployment would need persistent session storage.
+### Prototype data
 
-### Firestore
+The ASHA patient list and health-record screens currently contain demo data. Persistent healthcare records and stronger server-side authorization would be required for production use.
 
-Firestore is optional in the current backend. When it is not configured, the service can still run and returns fallback analytics values.
+### Safety boundary
 
-### Demo data
-
-The ASHA patient list and health-record view currently contain frontend demo data. This makes the interface easy to demonstrate, but those sections should be backed by real persistent records before being treated as a production health-record system.
-
-### Medical safety
-
-AarogyaBot is an **AI-assisted triage tool, not a diagnostic system**. It should not be presented as a replacement for qualified medical care.
+AarogyaBot is an **AI-assisted triage tool, not a diagnostic system**. It should not replace qualified medical advice.
 
 ---
 
-## Project design
+## Why this project?
 
-The strongest architectural idea in AarogyaBot is the separation between:
-
-```text
-Probabilistic understanding
-        ↓
-Structured extraction
-        ↓
-Deterministic decision logic
-        ↓
-Actionable workflow
-```
-
-Instead of:
+AarogyaBot combines several systems into one end-to-end workflow:
 
 ```text
-User
- ↓
 LLM
- ↓
-"Trust the answer"
-```
-
-The system creates a clearer boundary between language understanding and safety-critical application logic.
-
-The rest of the application then builds around that boundary:
-
-```text
-Natural language
-      +
+ +
 Vision
-      +
+ +
 Speech
-      +
+ +
 Rule engine
-      +
+ +
 Conversation state
-      +
-Facility lookup
-      +
+ +
+Facility discovery
+ +
 Analytics
-      +
-PDF reporting
-      ↓
-End-to-end triage workflow
+ +
+PDF generation
+        ↓
+End-to-end health triage platform
 ```
+
+The interesting engineering boundary is simple:
+
+> **Use AI to understand. Use explicit logic to decide. Use software to act.**
 
 ---
 
 ## Roadmap
 
-Potential next improvements:
-
-- persistent sessions for horizontally scaled deployments
-- stronger server-side authentication and role enforcement
-- real routing/travel-time data for facility navigation
-- automated evaluation of multilingual extraction quality
-- broader tests for emergency indicator coverage
-- persistent health records instead of demo patient data
-- observability, rate limiting, and request tracing
-- better localization for generated reports
-
----
-
-## Team
-
-Built by **Team Stetharos, PDEU**.
-
----
-
-## Disclaimer
-
-AarogyaBot is an AI-assisted health-triage and navigation application. It does not provide a medical diagnosis and should not replace advice from a qualified healthcare professional. For emergencies, seek immediate professional medical assistance.
+- Persistent distributed sessions
+- Stronger server-side authentication and RBAC
+- Automated multilingual evaluation
+- Expanded emergency-rule test coverage
+- Persistent health records
+- Observability and rate limiting
+- Better localized PDF reports
 
 ---
 
 <div align="center">
 
-### AarogyaBot
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:06B6D4,100:2563EB&height=120&section=footer&animation=fadeIn" width="100%"/>
 
-Multilingual triage · Human-centered workflows · AI-assisted decision support
+**Built by Team Stetharos · PDEU**
 
 <a href="https://aarogyabot.vercel.app">Live Demo</a>
 &nbsp;·&nbsp;
-<a href="https://github.com/prathamkariya/AarogyaBot">Repository</a>
+<a href="https://github.com/prathamkariya/AarogyaBot">GitHub</a>
 
 </div>
