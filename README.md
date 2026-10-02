@@ -1,6 +1,14 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2563EB,100:06B6D4&height=190&section=header&text=AarogyaBot&fontSize=52&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Multilingual%20AI%20Health%20Triage&descAlignY=60&descSize=18" width="100%"/>
+<img src="https://raw.githubusercontent.com/prathamkariya/AarogyaBot/main/frontend/public/logo.png" alt="AarogyaBot Logo" width="150"/>
+
+<br>
+
+<a href="https://readme-typing-svg.demolab.com/?font=Space+Grotesk&weight=700&size=48&duration=1&pause=100000&color=22D3EE&center=true&vCenter=true&width=600&height=70&lines=AarogyaBot">
+  <img src="https://readme-typing-svg.demolab.com/?font=Space+Grotesk&weight=700&size=48&duration=1&pause=100000&color=22D3EE&center=true&vCenter=true&width=600&height=70&lines=AarogyaBot" alt="AarogyaBot"/>
+</a>
+
+### Multilingual AI Health Triage
 
 <p>
   <a href="https://aarogyabot.vercel.app">
@@ -11,7 +19,7 @@
   </a>
 </p>
 
-**AI-assisted triage • Multilingual care • Actionable healthcare navigation**
+**AI-assisted triage · Multilingual care · Actionable healthcare navigation**
 
 </div>
 
@@ -20,8 +28,6 @@
 ## What is AarogyaBot?
 
 AarogyaBot is a multilingual health-triage platform designed to help users describe symptoms, clarify incomplete cases, estimate urgency, and find nearby healthcare facilities.
-
-It supports three experiences:
 
 <table>
 <tr>
@@ -43,7 +49,7 @@ Triage patients through a dedicated workflow with urgency filters, symptom conte
 
 ### Admin
 
-View district-level triage activity, urgency distribution, top symptoms and recent emergencies.
+View triage activity, urgency distribution, top symptoms and recent emergency cases.
 
 </td>
 </tr>
@@ -74,8 +80,6 @@ Guidance + nearby facilities
  ↓
 Optional health report
 ```
-
-This separation keeps the final decision path explicit instead of asking an LLM to directly decide everything.
 
 ---
 
@@ -115,7 +119,7 @@ The result can trigger:
 
 - nearby healthcare facility lookup
 - emergency / clinic guidance
-- voice and multilingual responses
+- multilingual responses
 - PDF triage reports
 - ASHA workflow integration
 - aggregate admin analytics
@@ -154,8 +158,6 @@ flowchart TB
 
 ## Multilingual by design
 
-The interface currently supports:
-
 <p align="center">
 <img src="https://img.shields.io/badge/English-en-2563EB?style=flat-square"/>
 <img src="https://img.shields.io/badge/Hindi-hi-2563EB?style=flat-square"/>
@@ -164,7 +166,7 @@ The interface currently supports:
 <img src="https://img.shields.io/badge/Tamil-ta-2563EB?style=flat-square"/>
 </p>
 
-Language selection is passed through the triage flow so follow-up questions and responses can stay aligned with the selected language.
+Language selection is passed through the triage flow so follow-up questions and responses stay aligned with the selected language.
 
 ---
 
@@ -345,8 +347,6 @@ PDF generation
 End-to-end health triage platform
 ```
 
-The interesting engineering boundary is simple:
-
 > **Use AI to understand. Use explicit logic to decide. Use software to act.**
 
 ---
@@ -365,12 +365,12 @@ The interesting engineering boundary is simple:
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:06B6D4,100:2563EB&height=120&section=footer&animation=fadeIn" width="100%"/>
-
-**Built by Team Stetharos · PDEU**
-
 <a href="https://aarogyabot.vercel.app">Live Demo</a>
 &nbsp;·&nbsp;
 <a href="https://github.com/prathamkariya/AarogyaBot">GitHub</a>
+
+<br><br>
+
+**Built by Team Stetharos · PDEU**
 
 </div>
